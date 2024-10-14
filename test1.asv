@@ -1,0 +1,21 @@
+%table 1 generation -descriptive statistics of input data for econometric analysis.
+data = readtable('EA19Data.xlsx', 'Sheet', 'List1');
+numericalData = table2array(data(:, 2:end));
+stats = deskriptor(numericalData);
+
+% Define the row and column labels
+rowLabels = {'Mean', 'Median', '1st Quartile', '3rd Quartile', 'Max', 'Min', ...
+             'Std. Deviation', 'Skewness', 'Kurtosis', 'Observations'};
+columnLabels = data.Properties.VariableNames(2:end);
+
+% Create the table with appropriate labels
+T = array2table(stats, 'RowNames', rowLabels, 'VariableNames', columnLabels);
+
+% Display the table
+disp(T);
+
+rowLa
+T2=array2table(out,"RowNames",rowLabels,"VariableNames",columnLabels);
+disp(T2);
+
+
